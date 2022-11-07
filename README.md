@@ -1,4 +1,4 @@
-#SyncESMC 
+# SyncESMC 
 
 Ethernet Synchronization Message Channel (ESMC)
 

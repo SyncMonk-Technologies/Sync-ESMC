@@ -1,0 +1,53 @@
+logging:
+    logging_level: 6
+    use_syslog: 1
+    message_tag: syncESMC
+    use_stdout: 1
+
+system:
+    ptp_uds_address: /var/run/syncEsmcPTP
+    interval: 10
+
+device:
+    0:
+        device_enable: 1
+        source_sel_mode: AUTO
+        network_option: OPTION_1
+        enhanced_esmc: 0
+        holdover_ql: QL_SSU_A
+        holdover_time: 10
+        ql_mode: 1
+        forced_ql_en: 0
+        forced_ql: QL_DNU
+        ql_exact_match: 1
+        accepted_ql:
+        - QL_PRC
+        tx_heartbeat_ms: 1000
+        rx_heartbeat_ms: 1100
+        clock_sel_mode: PLL
+        clock_local_ql: QL_SSU_B
+        squelch: 0
+        wait_to_start: 10
+        hardware_monitor_ms: 2000
+port:
+    0:
+        enp0s8:
+            port_enable: 1
+            priority: 1
+            input_mode: LINE
+            holdoff_time_ms: 5000
+            wait_to_restore_time: 10
+            pll_id: 1
+            pll_input: 1
+            clock_id: 0
+            transmit_mode: RXTX
+        enp0s9:
+            port_enable: 1
+            priority: 2
+            input_mode: LINE
+            holdoff_time_ms: 5000
+            wait_to_restore_time: 10
+            pll_id: 1
+            pll_input: 1
+            clock_id: 0
+            transmit_mode: RXTX
